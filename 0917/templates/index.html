@@ -1,0 +1,91 @@
+<!Doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/images/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='0917.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='0917.js') }}"></script>
+
+    <title>스파르타코딩클럽 | 나홀로 메모장</title>
+
+    <!-- style -->
+    <style type="text/css">
+
+    </style>
+    <script>
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="wrap">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" id="part-rec" onclick="changePart('rec')">추천</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="part-like" onclick="changePart('like')">즐겨찾기</a>
+        </li>
+    </ul>
+    <span>
+        <div class="jumbotron" id="re-part">
+            <h1 class="display-4">주식 종목 추천!!</h1>
+            <p class="lead">원하시는 종목을 추천합니다</p>
+            <hr class="my-4">
+            <p class="lead">
+                <button onclick="getCode()" id="btn-rec" type="button" class="btn btn-primary">추천 시작
+                </button>
+            </p>
+            <span id="select-box" style="font-size: 20px">
+            </span>
+            <button onclick="getCode()" type="button" class="btn btn-success" id="btn-next"
+                    style="display: none;">다음</button>
+            <button onclick="reset()" type="button" class="btn btn-secondary" id="btn-init"
+                    style="display: none;">다시선택</button>
+
+        </div>
+
+        <div class="jumbotron" style="display: none" id="like-part">
+            <h1 class="display-4">즐겨찾기한 종목</h1>
+            <p class="lead">즐겨찾기한 종목을 보여드려요~</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">종목</th>
+                  <th scope="col">즐겨찾기 취소</th>
+                  <th scope="col">정보</th>
+                </tr>
+              </thead>
+              <tbody id="list-stock">
+
+              </tbody>
+            </table>
+        </div>
+    </span>
+</div>
+
+</body>
+</html>
