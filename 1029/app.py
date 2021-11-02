@@ -1,8 +1,7 @@
 from datetime import datetime, timedelta
 from functools import wraps
-from turtledemo.chaos import g
 
-from flask import Flask, render_template, jsonify, request, Response
+from flask import Flask, render_template, jsonify, request, Response, g
 from pymongo import MongoClient
 import jwt
 import bcrypt
